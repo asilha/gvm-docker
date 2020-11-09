@@ -12,7 +12,7 @@ git clone https://github.com/asilha/gvm-docker.git
 
 ### [Optional] Build your own Docker images
 
-My prebuilt Docker images are available at [Docker Hub](https://hub.docker.com/u/asilha). If you want to be extra careful, you can build your own. Of course, this may take a long time, depending on your platform ([see my build log](https://gist.github.com/asilha/6ea282d190b23322c3136af0dff7befd)).
+My prebuilt Docker images are available at [Docker Hub](https://hub.docker.com/u/asilha). If you want to be extra careful, you can build your own images. Of course, this may take a long time, depending on your platform ([see my build log](https://gist.github.com/asilha/6ea282d190b23322c3136af0dff7befd)).
 
 ```console
 cd gvm-docker/dockerfile
@@ -58,7 +58,7 @@ docker exec -ti gvm_gvm-gvmd_1 gvmd --user=admin --new-password=gvmpass
 
 ![ChangePassword](https://github.com/asilha/gvm-docker/raw/master/images/ChangePassword.png)
 
-Open the Greenbone Security Assistant console. 
+Open the Greenbone Security Assistant console.
 
 By default, it will be available at <https://localhost>.
 
