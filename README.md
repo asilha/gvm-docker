@@ -1,6 +1,6 @@
 # Greenbone Vulnerability Management in Docker
-https://github.com/dgiorgio/gvm-docker
-![Dashboard](https://github.com/dgiorgio/gvm-docker/raw/master/images/Dashboard.png)
+https://github.com/asilha/gvm-docker
+![Dashboard](https://github.com/asilha/gvm-docker/raw/master/images/Dashboard.png)
 
 ### How to use this image
 ##### Run with docker-compose
@@ -19,13 +19,13 @@ Get 'admin' password:
 ```console
 $ docker logs gvm_gvm-gvmd_1 2> /dev/null | grep 'password:'
 ```
-![ShowPassword](https://github.com/dgiorgio/gvm-docker/raw/master/images/ShowPassword.png)
+![ShowPassword](https://github.com/asilha/gvm-docker/raw/master/images/ShowPassword.png)
 ##### Reset admin password
 ```console
 $ docker exec -ti gvm_gvm-gvmd_1 gvmd --user=admin --new-password=gvmpass
 ```
-![ChangePassword](https://github.com/dgiorgio/gvm-docker/raw/master/images/ChangePassword.png)
+![ChangePassword](https://github.com/asilha/gvm-docker/raw/master/images/ChangePassword.png)
 
 ## License
 
-This Docker image is licensed under the BSD, see [LICENSE](LICENSE.md).
+This Docker image is licensed under the BSD 3-Clause License, see [LICENSE](LICENSE.md).
