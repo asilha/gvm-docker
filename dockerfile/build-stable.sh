@@ -13,10 +13,10 @@ echo "
 ################################################################################
 ################### Build gvmlibs ##############################################
 ################################################################################
-Image: dgiorgio/gvmlibs:${gvmlibs_version}${build_gvmlibs}"
+Image: asilha/gvmlibs:${gvmlibs_version}${build_gvmlibs}"
 docker build -f ./Dockerfile-gvmlibs --build-arg STAGE=${STAGE} \
-  -t "dgiorgio/gvmlibs:${gvmlibs_version}${build_gvmlibs}" \
-  -t "dgiorgio/gvmlibs:latest" .
+  -t "asilha/gvmlibs:${gvmlibs_version}${build_gvmlibs}" \
+  -t "asilha/gvmlibs:latest" .
 
 # build gvmd
 gvmd_version=20.8.0
@@ -25,10 +25,10 @@ echo "
 ################################################################################
 ################### Build gvmd #################################################
 ################################################################################
-Image: dgiorgio/gvmd:${gvmd_version}${build_gvmd}"
+Image: asilha/gvmd:${gvmd_version}${build_gvmd}"
 docker build -f ./Dockerfile-gvmd --build-arg STAGE=${STAGE} \
-  -t "dgiorgio/gvmd:${gvmd_version}${build_gvmd}" \
-  -t "dgiorgio/gvmd:latest" .
+  -t "asilha/gvmd:${gvmd_version}${build_gvmd}" \
+  -t "asilha/gvmd:latest" .
 
 # build openvas
 openvas_version=20.8.0
@@ -37,10 +37,10 @@ echo "
 ################################################################################
 ################### Build openvas ##############################################
 ################################################################################
-Image: dgiorgio/openvas:${openvas_version}${build_openvas}"
+Image: asilha/openvas:${openvas_version}${build_openvas}"
 docker build -f ./Dockerfile-openvas --build-arg STAGE=${STAGE} \
-  -t "dgiorgio/openvas:${openvas_version}${build_openvas}" \
-  -t "dgiorgio/openvas:latest" .
+  -t "asilha/openvas:${openvas_version}${build_openvas}" \
+  -t "asilha/openvas:latest" .
 
 # build gsa
 gsa_version=20.8.0
@@ -49,10 +49,10 @@ echo "
 ################################################################################
 ################### Build gsa ##################################################
 ################################################################################
-Image: dgiorgio/gsa:${gsa_version}${build_gsa}"
+Image: asilha/gsa:${gsa_version}${build_gsa}"
 docker build -f ./Dockerfile-gsa --build-arg STAGE=${STAGE} \
-  -t "dgiorgio/gsa:${gsa_version}${build_gsa}" \
-  -t "dgiorgio/gsa:latest" .
+  -t "asilha/gsa:${gsa_version}${build_gsa}" \
+  -t "asilha/gsa:latest" .
 
 postgres_gvm_version=11
 build_postgres_gvm="${BUILD}"
@@ -60,25 +60,25 @@ echo "
 ################################################################################
 ################### Build postgres-gvm #########################################
 ################################################################################
-Image: dgiorgio/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}"
+Image: asilha/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}"
 docker build -f ./Dockerfile-postgres-gvm --build-arg STAGE=${STAGE} \
-  -t "dgiorgio/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}" \
-  -t "dgiorgio/postgres-gvm:latest" .
+  -t "asilha/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}" \
+  -t "asilha/postgres-gvm:latest" .
 
 # push
 if [ "${1}" == "push" ]; then
-  docker push "dgiorgio/gvmlibs:${gvmlibs_version}${build_gvmlibs}"
-  docker push "dgiorgio/gvmlibs:latest"
+  docker push "asilha/gvmlibs:${gvmlibs_version}${build_gvmlibs}"
+  docker push "asilha/gvmlibs:latest"
 
-  docker push "dgiorgio/gvmd:${gvmd_version}${build_gvmd}"
-  docker push "dgiorgio/gvmd:latest"
+  docker push "asilha/gvmd:${gvmd_version}${build_gvmd}"
+  docker push "asilha/gvmd:latest"
 
-  docker push "dgiorgio/openvas:${openvas_version}${build_openvas}"
-  docker push "dgiorgio/openvas:latest"
+  docker push "asilha/openvas:${openvas_version}${build_openvas}"
+  docker push "asilha/openvas:latest"
 
-  docker push "dgiorgio/gsa:${gsa_version}${build_gsa}"
-  docker push "dgiorgio/gsa:latest"
+  docker push "asilha/gsa:${gsa_version}${build_gsa}"
+  docker push "asilha/gsa:latest"
 
-  docker push "dgiorgio/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}"
-  docker push "dgiorgio/postgres-gvm:latest"
+  docker push "asilha/postgres-gvm:${postgres_gvm_version}${build_postgres_gvm}"
+  docker push "asilha/postgres-gvm:latest"
 fi
